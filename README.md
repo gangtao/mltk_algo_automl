@@ -5,7 +5,7 @@ splunk ml toolkit cusomter algo of auto classifier and regressor
 
 install the customer algo refer to [https://github.com/splunk/mltk-algo-contrib](https://github.com/splunk/mltk-algo-contrib)
 
-start dataplay container
+start dataplay container, [dataplay3](https://github.com/gangtao/dataplay3) is the backend that providing the access to autml algorithms base on [auto-sklearn](https://automl.github.io/auto-sklearn/master/index.html).
 ```sh
 docker run -p 8001:8000 dataplay3:0.1-dev
 ```
