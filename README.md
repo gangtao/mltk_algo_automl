@@ -16,7 +16,7 @@ run following spl for the auto ml algorithms
 classification sample
 ```sh
 | inputlookup iris.csv
-| fit AutoClassifier "species" from "sepal_length", "sepal_width" into "automodel1"
+| fit AutoClassifier "species" from "sepal_length", "sepal_width","petal_length", "petal_width" into "automodel1"
 ```
 
 ```sh
@@ -26,7 +26,7 @@ classification sample
 regression sample
 ```sh
 | inputlookup iris.csv
-| fit AutoRegressor "sepal_length" from "sepal_width" "petal_length" into "automodel2"
+| fit AutoRegressor "sepal_length" from "sepal_width", "petal_length" into "automodel2"
 ```
 
 ```sh
@@ -35,7 +35,7 @@ regression sample
 
 # issues
 
-as the dependency requests rely on urllib3 and there is a known issue of open ssl on mac, you may need copy the python lib to replace the default one used by splunk which is under `<SPLUNK_HOME>/etc/apps/Splunk_SA_Scientific_Python_darwin_x86_64/bin/darwin_x86_64/bin/python`
+as the dependency requests rely on urllib3 and there is a known issue of open ssl on mac, you may need copy the python lib to replace the default one used by splunk which is under `<SPLUNK_HOME>/etc/apps/Splunk_SA_Scientific_Python_darwin_x86_64/bin/darwin_x86_64/bin/python` this will cause the algo failed to load refer to [https://answers.splunk.com/answers/693496/splunk-machine-learning-toolkit-error-in-loading-c.html](https://answers.splunk.com/answers/693496/splunk-machine-learning-toolkit-error-in-loading-c.html)
 
 the search will fail with auto-finalize under free lincese, an enterprise license is requried.
 
